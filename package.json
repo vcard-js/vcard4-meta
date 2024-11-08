@@ -1,0 +1,76 @@
+{
+  "name": "@vcard/vcard4-meta",
+  "version": "1.0.0-rc.4",
+  "description": "A vCard 4 library which provides data about the format.",
+  "keywords": [
+    "meta",
+    "metadata",
+    "vcard",
+    "vcard4",
+    "vcf"
+  ],
+  "homepage": "https://github.com/vcard-js/vcard4-meta#readme",
+  "bugs": {
+    "url": "https://github.com/vcard-js/vcard4-meta/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcard-js/vcard4-meta.git"
+  },
+  "license": "MIT",
+  "author": "James Benner <hello@jamesbenner.com> (https://www.jamesbenner.com/)",
+  "type": "module",
+  "exports": {
+    "require": {
+      "types": "./dist/cjs/index.d.ts",
+      "default": "./dist/cjs/index.js"
+    },
+    "import": {
+      "types": "./dist/esm/index.d.ts",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "node ./scripts/build.js",
+    "clean": "rimraf dist",
+    "fix-lint": "eslint --fix",
+    "lint": "eslint",
+    "prepare": "husky",
+    "prepublishOnly": "npm run build",
+    "simulate-ci": "node ./scripts/simulate-ci.js",
+    "test": "vitest --watch=false",
+    "watch-test": "vitest"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.2.2",
+    "@eslint/js": "^9.14.0",
+    "@stylistic/eslint-plugin": "^2.10.1",
+    "@types/node": "^18.19.64",
+    "chalk": "^5.3.0",
+    "command-exists": "^1.2.9",
+    "esbuild": "0.24.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-no-only-tests": "^3.3.0",
+    "execa": "^9.5.1",
+    "globals": "^15.12.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "log-symbols": "^7.0.0",
+    "np": "^10.0.7",
+    "rimraf": "^5.0.10",
+    "sort-package-json": "^2.10.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0",
+    "vitest": "^2.1.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
